@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/UsersMaster.Master" AutoEventWireup="true" CodeBehind="NestedUserHome.master.cs" Inherits="OnlineVoting.UserPages.NestedUserHome" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
+    <aside class="uh_left_col">
+        <section class="overplay"></section>
+        <section class="brief_introduction">
+            <header class="inner">
+                <a class="show_avatar">
+                    <img src="<%=ResolveUrl(Session["user_photopath"].ToString()) %>" alt="" class="avatar" />
+                </a>
+                <fieldset class="username" style="border-style: none;">
+                    <legend>用户名</legend>
+                    <h1><a style="color: blue; text-decoration: none;"><%=Session["user_name"] %></a></h1>
+                </fieldset>
+                <fieldset class="signature">
+                    <legend>签名</legend>
+                    <asp:Label ID="Signature" runat="server"></asp:Label>
+                </fieldset>
+            </header>
+        </section>
+    </aside>
+    <section class="uh_mid_col">
+        <asp:ContentPlaceHolder ID="UserHome" runat="server"></asp:ContentPlaceHolder>
+    </section>
+    <aside class="uh_right_col">
+        <div class="calendar_container">
+            <img src="<%=ResolveUrl("~/Images/日历-心.png") %>" alt="" class="calendar_icon"/>
+            <asp:Calendar ID="Calendar1" CssClass="calendar" runat="server" CaptionAlign="Top" Enabled="False" EnableTheming="False" ShowNextPrevMonth="False" EnableViewState="False">
+                <SelectedDayStyle BorderColor="#FFCCFF" />
+                <TodayDayStyle BackColor="#00FFCC" Font-Bold="True" Font-Size="19px" Font-Strikeout="False" Font-Underline="True" ForeColor="Red" />
+            </asp:Calendar>
+            <div>
+                <label class="currentTime" style="color:antiquewhite;font-size:larger;"></label><br />
+                <label style="color: black;font-size: medium;background-color: burlywood;">本站累计访问人次:<%=BLL.UserHome.GetUserHome().GetSystemInfo().VisitSum %></label>
+            </div>
+        </div>
+    </aside>
+</asp:Content>

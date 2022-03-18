@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UsersMaster.master.cs" Inherits="OnlineVoting.MasterPages.UsersMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--样式，脚本--%>
+    <link href="<%=this.ResolveUrl("~/Images/flower.png") %>"" rel="icon" />
+    <link href="<%=this.ResolveUrl("~/CSS/UserMaster.css") %>" rel="stylesheet"/>
+    <script src="<%=this.ResolveUrl("~/Scripts/jquery-3.6.0.min.js") %>" type="text/javascript"></script>
+    <script src="<%=this.ResolveUrl("~/js/UserMaster.js") %>" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <label class="123"></label>
+        <%--网站头部--%>
+        <header class="head">
+            <nav class="headnav">
+                <ul class="leftnav">
+                    <li>
+                        <a href="<%=this.ResolveUrl("~/UserPages/index.aspx") %>">
+                            <img src="<%=this.ResolveUrl("~/Images/flower.png") %>" class="icon" alt=""/>
+                            <span class="siteTitle">Voting</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%=this.ResolveUrl("~/UserPages/VotingSquare.aspx") %>">投票广场</a>
+                    </li>
+                </ul>
+                <div class="avatar">
+                   <img src="<%=ResolveUrl(Session["user_photopath"].ToString()) %>" alt="" class="avatarimg"/>
+                    <ul class="dropdownlist">
+                        <li>
+                            <img src="<%=this.ResolveUrl("~/Images/个人头像.png") %>" alt=""/>
+                            <a href="<%=this.ResolveUrl("~/UserPages/PersonalCenter.aspx") %>">个人中心</a>
+                            <img src="<%=this.ResolveUrl("~/Images/进入箭头.png") %>" alt=""/>
+                            <hr />
+                        </li>
+                        <li>
+                            <img src="<%=this.ResolveUrl("~/Images/退出.png") %>" alt=""/>
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="Logout_Click">退出登录</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" BackColor="antiquewhite" CurrentNodeStyle-BackColor="#33CCCC" CurrentNodeStyle-BorderColor="#FFFF99" CurrentNodeStyle-ForeColor="#FFFF66" Font-Size="20px" ForeColor="#33CCCC"></asp:SiteMapPath>
+        <main>
+            <asp:ContentPlaceHolder ID="Main" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <%--网站尾部--%>
+        <footer class="siteFooter">
+            <p>版权所有 @ 镜中花</p>
+        </footer>
+    </form>
+</body>
+</html>

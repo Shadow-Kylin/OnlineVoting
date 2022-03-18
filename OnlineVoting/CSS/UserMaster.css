@@ -1,0 +1,462 @@
+﻿
+/*-------------------UsersMaster-----------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /*边框和内边距的值是包含在width内*/
+    box-sizing: border-box;
+    font-family: 'Cascadia Mono',Helvetica;
+    font-size: 20px;
+    cursor: url("../Images/鼠标.ico"),auto;
+}
+
+a {
+    cursor: url("../Images/点击.ico"),auto;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    background-image: url("../Images/wallhaven-6o7g9x.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.head {
+    box-shadow: 1px 2px 4px 2px rgba(0,47,167);
+    position: sticky;
+    width: 100%;
+    top: 0;
+    margin-bottom: 10px;
+    z-index: 9999;
+    background: transparent;
+}
+
+.headnav {
+    height: 62px;
+    display: -webkit-box;
+}
+
+.leftnav {
+    margin: 0;
+}
+
+    .leftnav li {
+        list-style-type: none;
+        display: inline;
+        font-family: 华文行楷;
+        margin: 10px;
+        padding: 5px;
+        font-size: 22px;
+        cursor: url("../Images/点击.ico"),auto;
+    }
+
+        .leftnav li a {
+            text-decoration: none;
+            color: blueviolet;
+        }
+
+        .leftnav li:hover {
+            border: 1px solid;
+            border-radius: 10px;
+            background-color: lightgray;
+            font-size: 25px;
+            color: blueviolet;
+        }
+
+        .leftnav li:last-child {
+            cursor: url("../Images/鼠标.ico"),auto;
+        }
+
+.siteTitle {
+    font-size: xx-large;
+    font-family: 华文行楷;
+}
+
+.icon, .siteTitle {
+    vertical-align: middle;
+    cursor: url("../Images/点击.ico"),auto;
+}
+
+.siteFooter {
+    background-color: #1b1b1b;
+    color: #fff;
+    position: relative;
+    padding: 20px;
+    z-index: -1;
+}
+
+.headnav .avatar {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 50px;
+    height: 50px;
+}
+
+.avatarimg {
+    max-width: 50px;
+    min-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 2px 6px 1px gray;
+}
+
+.dropdownlist {
+    background-color: white;
+    width: 180px;
+    display: none;
+    position: relative;
+    transform: translate(-25%, 0);
+    margin: 0;
+    padding: 10px;
+    line-height: 1.5;
+    text-align: justify;
+    border: 1px solid;
+    box-shadow: 1px 1px 3px 0px grey;
+    border-radius: 10px;
+}
+
+    .dropdownlist li {
+        list-style-type: none;
+        font-family: 华文行楷;
+        font-size: 20px;
+        color: black;
+        text-align: justify;
+        cursor: url("../Images/点击.ico"),auto;
+    }
+
+        .dropdownlist li a {
+            text-decoration: none;
+        }
+
+    .dropdownlist img {
+        vertical-align: middle;
+    }
+
+.avatar:hover .avatarimg {
+    min-width: 130%;
+    top: 60%;
+}
+
+.avatar:hover .dropdownlist {
+    display: block;
+}
+
+.dropdownlist li:hover {
+    background-color: lightgray;
+}
+
+main {
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/*--------------------NestedUserHome----------------------*/
+
+.uh_left_col {
+    width: 300px;
+    position: absolute;
+    opacity: 1;
+    height: 100%;
+    background-color: white;
+}
+
+.overplay {
+    background: #4d4d4d;
+    width: 100%;
+    height: 180px;
+    position: absolute;
+}
+
+.brief_introduction {
+    width: 100%;
+    text-align: center;
+    top: 150px;
+    position: absolute;
+}
+
+    .brief_introduction .inner {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+.show_avatar {
+    width: 128px;
+    height: 128px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    top: -10%;
+    border-radius: 50%;
+    border: 3px solid darkgrey;
+    display: inline-block;
+    background-color: aliceblue;
+}
+
+    .show_avatar .avatar {
+        width: 128px;
+        cursor: url("../Images/点击.ico"),auto;
+    }
+
+.inner .username {
+    margin-bottom: 20px;
+    border-width: 4px;
+    cursor: url("../Images/点击.ico"),auto;
+}
+
+.inner .signature {
+    border-width: 4px;
+    border-style: groove;
+    width: 200px;
+    margin: 0 auto;
+    box-shadow: 1px 2px 3px 1px orangered;
+}
+
+.uh_mid_col {
+    position: absolute;
+    left: 25%;
+    top: 3%;
+    background: white;
+    width: 800px;
+    height: fit-content;
+    opacity: 0.7;
+    border-radius: 10px;
+    border-style: groove;
+    box-shadow: 0px 0px 15px 2px chartreuse;
+}
+
+.uh_right_col {
+    margin-top: 10px;
+    position: fixed;
+    right: 1%;
+    box-shadow: 0 0 10px black;
+    width: 300px;
+    height: auto;
+    background: transparent;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.calendar {
+    margin: 0px auto 2px auto;
+    display: none;
+}
+
+/*--------------------UserHome----------------------*/
+.voteSubject {
+    position: relative;
+    width: 700px;
+    height: fit-content;
+    background-color: wheat;
+    margin: 35px auto;
+}
+
+    .voteSubject header {
+        position: relative;
+        height: fit-content;
+        border-width: 3px;
+        border-style: none none solid none;
+        background: linear-gradient(160deg,#f8aba6 0%,#ffd400 100%);
+        padding: 10px;
+    }
+
+.subjectState {
+    border-radius: 50%;
+    border: 1px solid;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    height: fit-content;
+    background-color: black;
+    color: yellow;
+    right: -16px;
+    top: -37px;
+}
+
+.deadline {
+    font-family: cursive;
+}
+
+.ViewDetails {
+    float: right;
+}
+
+.PreButton {
+    margin: auto 50px;
+}
+
+/*-------------------------CurrentUserSubject-------------------------------*/
+.EditButton {
+    cursor: url("../Images/点击.ico"),auto;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+    .EditButton img {
+        cursor: url("../Images/点击.ico"),auto;
+        width: 30px;
+        vertical-align: bottom;
+    }
+
+.SaveButton {
+    cursor: url("../Images/点击.ico"),auto;
+    margin: 0px 350px;
+    font-size: 30px;
+    box-shadow: 1px 1px 3px 1px darkblue;
+    border-radius: 15px;
+    border: 3px solid;
+}
+
+.subject_details span {
+    display: block;
+    margin: 20px;
+}
+
+.statistic {
+    position: relative;
+    width: 230px;
+    height: fit-content;
+    margin-left: 300px;
+}
+
+.deadlineSelect {
+    display: inline-block;
+}
+
+/*-----------------VotingSquare--------------------*/
+.vs_container {
+    margin: auto;
+    width: 750px;
+}
+
+/*------------------OtherUserSubject-----------------------------*/
+.otherSubject {
+    width: 800px;
+    margin: auto;
+    background-color: cadetblue;
+}
+
+/*------------------------PersonalCenter-----------------------------*/
+.ListBox_nav {
+    overflow-y: hidden;
+    background-color: ghostwhite;
+    height: 130px;
+    box-shadow: 1px 2px 6px 1px darkgrey;
+    position: fixed;
+    left: 20%;
+    border-width: 4px;
+    border-style: outset;
+    border-color: burlywood;
+}
+
+.ListBox_nav option {
+    margin: 10px;
+    font-family: ui-monospace;
+}
+
+.user_setvote {
+    line-height: 2;
+}
+
+.user_setvote .setsubject {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.user_setvote {
+    line-height:2;
+    padding:10px;
+}
+
+.additem {
+    cursor: url("../Images/点击.ico"),auto;
+}
+
+.AddedItem {
+    display: block;
+}
+
+.cancelButton {
+    margin: 5px auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.tooltipLabel {
+    color: blueviolet;
+    font-size: 40px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.userinf_show {
+    color: antiquewhite;
+    background: darkgray;
+    border-radius: 10px;
+    line-height: 2;
+    position: fixed;
+    left: 40%;
+}
+
+.userinf_show label {
+    width: 100px;
+    text-align: right;
+    display: inline-block
+}
+
+.pc_edit {
+    position: relative;
+    color: aliceblue;
+    height: 260px;
+    overflow-y: hidden;
+    background: transparent;
+    position: fixed;
+    left: 80%;
+}
+
+.pc_edit option{
+    margin: 30px;
+    box-shadow: 0px 0px 40px 6px burlywood;
+}
+
+.pc_edit option:hover {
+    background: bisque;
+    color: black;;
+}
+
+.sex_select {
+    display: inline-block;
+}
+
+.sex_select label{
+    width:fit-content;
+}
+
+.saveedit_button {
+    margin: auto;
+    display: block;
+}
+
+.pc_FileUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: aqua;
+    height: 70px;
+    justify-content: center;
+}

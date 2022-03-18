@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="~/UserPages/index.aspx" title="首页"  description="index">
+		<siteMapNode url="~/UserPages/CurrentUserSubject.aspx" title="投票详情"/>
+		<siteMapNode url="~/UserPages/VotingSquare.aspx" title="投票广场"  description="" >
+			<siteMapNode url="~/UserPages/OtherUserSubject.aspx" title="投票详情"/>
+		</siteMapNode>
+		<siteMapNode url="~/UserPages/PersonalCenter.aspx" title="用户中心"  description="">
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

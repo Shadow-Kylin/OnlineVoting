@@ -1,0 +1,69 @@
+﻿body {
+    background-image: url(../Images/background.jpg);
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:fit-content;
+    background: linear-gradient(to top right, LightSkyBlue,30%,Tan,65%,DimGray);
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px 3px cadetblue;
+    animation-name:test;
+    animation-delay:1s;
+    animation-duration:2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in-out;
+    padding:20px;
+}
+
+@keyframes test{
+    0%{
+        opacity:1;
+    }
+    50% {
+        opacity:0.6;
+    }
+}
+
+
+#username,#password{
+    font-size:23px;
+    vertical-align:middle;
+    background:transparent;
+    border:none;
+    width:210px;
+    margin:10px 0px
+}
+
+#LoginMethod{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:18px;
+}
+
+#Image1{
+    margin:auto;
+    display:block;
+}
+
+#Image2,#Image3{
+    vertical-align:middle
+}
+
+#LoginButton {
+    margin: auto;
+    padding: 10px 30px;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid lightcyan;
+    font-size: 18px;
+}
+
+#Label1{
+    margin-top:20px;
+    display:block
+}
