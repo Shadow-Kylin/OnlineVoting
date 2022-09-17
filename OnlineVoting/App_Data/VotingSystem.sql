@@ -1,9 +1,23 @@
-﻿drop table if exists VotingSystem;
+﻿use master
+go
+alter database VotingSystem set single_user with rollback immediate
+go
+drop database VotingSystem
 create database VotingSystem
 alter database VotingSystem collate chinese_prc_ci_as
-go
 use VotingSystem
 go
+
+CREATE TABLE [dbo].[Subject] (
+    [subject_id]      INT          NOT NULL,
+    [subject_content] NTEXT        NULL,
+    [select_mode]     NCHAR (2)    NULL,
+    [deadline]        DATE         NULL,
+    [votable]         VARCHAR (5)  DEFAULT ('true') NULL,
+    [user_name]       VARCHAR (15) NULL,
+    CONSTRAINT [PK_Subject] PRIMARY KEY ([subject_id]),
+);
+
 
 CREATE TABLE [dbo].[Item] (
     [item_id]      INT   IDENTITY (1, 1) NOT NULL,
@@ -13,15 +27,7 @@ CREATE TABLE [dbo].[Item] (
     CONSTRAINT [FK2] FOREIGN KEY ([subject_id]) REFERENCES [dbo].[Subject] ([subject_id])
 );
 
-CREATE TABLE [dbo].[Subject] (
-    [subject_id]      INT          IDENTITY (1, 1) NOT NULL,
-    [subject_content] NTEXT        NULL,
-    [select_mode]     NCHAR (2)    NULL,
-    [deadline]        DATE         NULL,
-    [votable]         VARCHAR (5)  DEFAULT ('true') NULL,
-    [user_name]       VARCHAR (15) NULL,
-    PRIMARY KEY CLUSTERED ([subject_id] ASC)
-);
+
 
 CREATE TABLE [dbo].[UserInf] (
     [user_id]        INT          IDENTITY (1, 1) NOT NULL,
@@ -36,7 +42,6 @@ CREATE TABLE [dbo].[UserInf] (
     [user_photopath] NTEXT        NULL,
     [user_signature] NTEXT        NULL,
     CONSTRAINT [PK_UserInf] PRIMARY KEY CLUSTERED ([user_id] ASC),
-    UNIQUE NONCLUSTERED ([user_name] ASC)
 );
 
 CREATE TABLE [dbo].[UserVote] (
@@ -48,3 +53,11 @@ CREATE TABLE [dbo].[UserVote] (
     CONSTRAINT [FK1] FOREIGN KEY ([user_id]) REFERENCES [dbo].[UserInf] ([user_id])
 );
 
+CREATE TABLE [dbo].[SystemInfo]
+(
+	[id] INT NOT NULL DEFAULT 1, 
+	[regiterUserSum] INT NULL DEFAULT 0, 
+    [publishedSubjectSum] NCHAR(10) NULL DEFAULT 0, 
+    [visitSum] NCHAR(10) NULL DEFAULT 0, 
+    CONSTRAINT [PK_SystemInfo] PRIMARY KEY ([id])
+)
