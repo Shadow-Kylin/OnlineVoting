@@ -61,3 +61,6 @@ CREATE TABLE [dbo].[SystemInfo]
     [visitSum] NCHAR(10) NULL DEFAULT 0, 
     CONSTRAINT [PK_SystemInfo] PRIMARY KEY ([id])
 )
+
+INSERT INTO [dbo].[SystemInfo] ([regiterUserSum],[publishedSubjectSum],[visitSum])
+VALUES (0,0,0);
